@@ -2,7 +2,7 @@
 
 To make it easy to setup the LoRaWAN® credentials and LoRa® P2P settings, an AT command interface over USB is implemented. It includes the basic commands required to define the node.
 
-**Credits:**    
+**Credits:**
 Taylor Lee (taylor.lee@rakwireless.com)
 
 _**REMARK 1**_
@@ -27,8 +27,8 @@ LoRa® is a registered trademark or service mark of Semtech Corporation or its a
 ### General commands
 * [AT Command syntax](#at-command-syntax)
 * [AT?](#at) Help
-* [ATR](#atr) Reset device
-* [ATZ](#atz) Reset to default configuration
+* [ATR](#atr) Reset to default configuration
+* [ATZ](#atz) Reset device
 ### LoRaWAN commands
 * [AT+APPEUI](#atappeui) Set/Get Application EUI
 * [AT+APPKEY](#atappkey) Set/Get Application Key
@@ -40,7 +40,7 @@ LoRa® is a registered trademark or service mark of Semtech Corporation or its a
 * [AT+JOIN](#atjoin) Join LoRaWAN® Network
 * [AT+NJS](#atnjs) Get Network Join Status
 * [AT+NJM](#atnjm) Get/Set Network Join Mode
-* [AT+SENDFREQ](#atsendfreq) Get/Set Automatic Send Interval 
+* [AT+SENDFREQ](#atsendfreq) Get/Set Automatic Send Interval
 * [AT+SEND](#atsend) Send LoRaWAN® packet
 * [AT+ADR](#atadr) Set/Get ADR Mode
 * [AT+CLASS](#atclass) Set/Get Class
@@ -69,9 +69,9 @@ LoRa® is a registered trademark or service mark of Semtech Corporation or its a
 * [AT+GNSS](#atgnss) Set GNSS output format
 
 ### [Appendix](#appendix-1)
-  * [Appendix I Data Rate by Region](#appendix-i-data-rate-by-region)    
-  * [Appendix II TX Power by Region](#appendix-ii-tx-power-by-region)    
-  * [Appendix III Maximum Transmission Load by Region](#appendix-iii-maximum-transmission-load-by-region)    
+  * [Appendix I Data Rate by Region](#appendix-i-data-rate-by-region)
+  * [Appendix II TX Power by Region](#appendix-ii-tx-power-by-region)
+  * [Appendix III Maximum Transmission Load by Region](#appendix-iii-maximum-transmission-load-by-region)
 
 ----
 
@@ -107,13 +107,13 @@ The possible status are:
 | **STATUS RETURN CODE**   | **Description**                                      |
 | ------------------------ | ---------------------------------------------------- |
 | `OK`                     | Command executed correctly without error.            |
-| `+CME ERROR:1`               | Generic error or input is not supported.             |
-| `+CME ERROR:2`          | Command not allowed. |
-| `+CME ERROR:5`         | The input parameter of the command is wrong.         |
-| `+CME ERROR:6` | The parameter is too long.                           |
-| `+CME ERROR:8`   | Value out of range.              |
+| `+CME ERROR:1`           | Generic error or input is not supported.             |
+| `+CME ERROR:2`           | Command not allowed.                                 |
+| `+CME ERROR:5`           | The input parameter of the command is wrong.         |
+| `+CME ERROR:6`           | The parameter is too long.                           |
+| `+CME ERROR:8`           | Value out of range.                                  |
 
-More details on each command description and examples are given in the remainder of this section. 
+More details on each command description and examples are given in the remainder of this section.
 
 ----
 
@@ -126,7 +126,7 @@ Returns a list of all available commands with a short description
 | Command | Input Parameter | Return Value | Return Code |
 | ------- | --------------- | ------------ | ----------- |
 | AT?     | -               | *List of commands* | `OK`  |
-    
+
 
 ```
 AT?
@@ -137,7 +137,7 @@ AT command list
 +++++++++++++++
 AT?         AT commands
 ATR         Restore default
-ATZ		ATZ Trig a MCU reset
+ATZ		    ATZ Trig a MCU reset
 AT+APPEUI   Get or set the application EUI
 AT+APPKEY   Get or set the application key
 AT+DEVEUI   Get or set the device EUI
@@ -149,7 +149,7 @@ AT+JOIN     Join network
 AT+NJS      Get the join status
 AT+NJM      Get or set the network join mode
 AT+SENDFREQ Get or Set the automatic send time
-AT+SEND	Send data
+AT+SEND	    Send data
 AT+ADR      Get or set the adaptive data rate setting
 AT+CLASS    Get or set the device class
 AT+DR       Get or Set the Tx DataRate=[0..7]
@@ -161,14 +161,14 @@ AT+RSSI     Last RX packet RSSI
 AT+SNR      Last RX packet SNR
 AT+VER      Get SW version
 AT+STATUS	Show LoRaWAN status
-AT+NWM	Switch LoRa workmode
+AT+NWM	    Switch LoRa workmode
 AT+PFREQ	Set P2P frequency
-AT+PSF	Set P2P spreading factor
-AT+PBW	Set P2P bandwidth
-AT+PCR	Set P2P coding rate
-AT+PPL	Set P2P preamble length
-AT+PTP	Set P2P TX power
-AT+P2P	Set P2P configuration
+AT+PSF	    Set P2P spreading factor
+AT+PBW	    Set P2P bandwidth
+AT+PCR	    Set P2P coding rate
+AT+PPL	    Set P2P preamble length
+AT+PTP	    Set P2P TX power
+AT+P2P	    Set P2P configuration
 AT+PSEND	P2P send data
 AT+PRECV	P2P receive mode
 +++++++++++++++
@@ -176,7 +176,7 @@ AT+PRECV	P2P receive mode
 OK
 
 ```
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -189,7 +189,7 @@ This command restores all parameters to the initial default values of the module
 | ATR?    | -               | -            | `OK`        |
 | ATR     | -               | -            | `OK`        |
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -204,7 +204,7 @@ This command is used to trigger an MCU reset.
 | ATZ?    | -               | `ATZ: Trig a MCU reset`   | `OK`        |
 | ATZ     | -               | *No return. MCU resets.* | `OK`        |
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -216,7 +216,7 @@ This command allows the user to access and configure the APPEUI.
 
 | Command                       | Input Parameter | Return Value                                               | Return Code              |
 | ----------------------------- | --------------- | ---------------------------------------------------------- | ------------------------ |
-| AT+APPEUI?                    | -               | `AT+APPEUI: Get or Set the App Eui` | `OK`                     |
+| AT+APPEUI?                    | -               | `AT+APPEUI: Get or Set the App Eui`                        | `OK`                     |
 | AT+APPEUI=?                   | -               | *< 8 hex >*                                                | `OK`                     |
 | AT+APPEUI=`<Input Parameter>` | *< 8 hex >*     | -                                                          | `OK` or `AT_PARAM_ERROR` |
 
@@ -225,7 +225,7 @@ This command allows the user to access and configure the APPEUI.
 ```
 AT+APPEUI?
 
-+APPEUI: Get or set the application EUI 
++APPEUI: Get or set the application EUI
 OK
 
 AT+APPEUI=?
@@ -242,7 +242,7 @@ AT+APPEUI=70b3d57ed00201eh
 +CME ERROR:5
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -254,7 +254,7 @@ This command allows the user to access and configure the APPKEY.
 
 | Command                       | Input Parameter | Return Value                                                                       | Return Code              |
 | ----------------------------- | --------------- | ---------------------------------------------------------------------------------- | ------------------------ |
-| AT+APPKEY?                    | -               | `AT+APPKEY: Get or Set the Application Key` | `OK`                     |
+| AT+APPKEY?                    | -               | `AT+APPKEY: Get or Set the Application Key`                                        | `OK`                     |
 | AT+APPKEY=?                   | -               | *< 16 hex >*                                                                       | `OK`                     |
 | AT+APPKEY=`<Input Parameter>` | *< 16 hex >*    | -                                                                                  | `OK` or `AT_PARAM_ERROR` |
 
@@ -263,7 +263,7 @@ This command allows the user to access and configure the APPKEY.
 ```
 AT+APPKEY?
 
-AT+APPKEY: Get or set the application key 
+AT+APPKEY: Get or set the application key
 OK
 
 AT+APPKEY=?
@@ -280,7 +280,7 @@ AT+APPKEY=2b84e0b09b68e5cb42176fe753dcee7x
 +CME ERROR:5
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -292,7 +292,7 @@ This command allows the user to access and configure the device EUI or DEVEUI.
 
 | Command                       | Input Parameter | Return Value                                                  | Return Code              |
 | ----------------------------- | --------------- | ------------------------------------------------------------- | ------------------------ |
-| AT+DEVEUI?                    | -               | `AT+DEVEUI: Get or Set the Device EUI` | `OK`                     |
+| AT+DEVEUI?                    | -               | `AT+DEVEUI: Get or Set the Device EUI`                        | `OK`                     |
 | AT+DEVEUI=?                   | -               | *< 8 hex >*                                                   | `OK`                     |
 | AT+DEVEUI=`<Input Parameter>` | *< 8 hex >*     | -                                                             | `OK` or `AT_PARAM_ERROR` |
 
@@ -301,7 +301,7 @@ This command allows the user to access and configure the device EUI or DEVEUI.
 ```
 AT+DEVEUI?
 
-+DEVEUI: Get or set the device EUI 
++DEVEUI: Get or set the device EUI
 OK
 
 AT+DEVEUI=?
@@ -318,7 +318,7 @@ AT+DEVEUI=ac1f09fffe03efdx
 +CME ERROR:5
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -330,7 +330,7 @@ This command allows the user to access and configure the application session key
 
 | Command                        | Input Parameter | Return Value                                                                                | Return Code              |
 | ------------------------------ | --------------- | ------------------------------------------------------------------------------------------- | ------------------------ |
-| AT+APPSKEY?                    | -               | `AT+APPSKEY: Get or Set the Application Session Key` | `OK`                     |
+| AT+APPSKEY?                    | -               | `AT+APPSKEY: Get or Set the Application Session Key`                                        | `OK`                     |
 | AT+APPSKEY=?                   | -               | *< 16 hex >*                                                                                | `OK`                     |
 | AT+APPSKEY=`<Input Parameter>` | *< 16 hex >*    | -                                                                                           | `OK` or `AT_PARAM_ERROR` |
 
@@ -339,7 +339,7 @@ This command allows the user to access and configure the application session key
 ```
 AT+APPSKEY?
 
-AT+APPSKEY: Get or set the application session key 
+AT+APPSKEY: Get or set the application session key
 OK
 
 AT+APPSKEY=?
@@ -356,7 +356,7 @@ AT+APPSKEY=3f6a66459d5edca63cbc4619cd61a11x
 +CME ERROR:5
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -368,7 +368,7 @@ This command allows the user to access and configure the network session keys or
 
 | Command                        | Input Parameter | Return Value                                                                                | Return Code              |
 | ------------------------------ | --------------- | ------------------------------------------------------------------------------------------- | ------------------------ |
-| AT+NWKSKEY?                    | -               | `AT+NWKSKEY: Get or Set the Network Session Key` | `OK`                     |
+| AT+NWKSKEY?                    | -               | `AT+NWKSKEY: Get or Set the Network Session Key`                                            | `OK`                     |
 | AT+NWKSKEY=?                   | -               | *< 16 hex >*                                                                                | `OK`                     |
 | AT+NWKSKEY=`<Input Parameter>` | *< 16 hex >*    | -                                                                                           | `OK` or `AT_PARAM_ERROR` |
 
@@ -377,7 +377,7 @@ This command allows the user to access and configure the network session keys or
 ```
 AT+NWKSKEY?
 
-AT+NWKSKEY: Get or Set the network session key 
+AT+NWKSKEY: Get or Set the network session key
 OK
 
 AT+NWKSKEY=?
@@ -394,7 +394,7 @@ AT+NWKSKEY=323d155a000df335307a16da0c9df53f0
 +CME ERROR:5
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -406,7 +406,7 @@ This command allows the user to access and configure the device address or DEVAD
 
 | Command                        | Input Parameter | Return Value                                               | Return Code              |
 | ------------------------------ | --------------- | ---------------------------------------------------------- | ------------------------ |
-| AT+DEVADDR?                    | -               | `AT+DEVADDR: Get or Set the Device address` | `OK`                     |
+| AT+DEVADDR?                    | -               | `AT+DEVADDR: Get or Set the Device address`                | `OK`                     |
 | AT+DEVADDR=?                   | -               | *< 4 hex >*                                                | `OK`                     |
 | AT+DEVADDR=`<Input Parameter>` | *< 4 hex >*     | -                                                          | `OK` or `AT_PARAM_ERROR` |
 
@@ -415,7 +415,7 @@ This command allows the user to access and configure the device address or DEVAD
 ```
 AT+DEVADDR?
 
-AT+DEVADDR: Get or set the device address 
+AT+DEVADDR: Get or set the device address
 OK
 
 AT+DEVADDR=?
@@ -433,7 +433,7 @@ AT+DEVADDR=26021FBX
 +CME ERROR:5
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -443,10 +443,10 @@ Description: Confirmed payload mode
 
 This command allows the user to access and configure type of payload of the device.
 
-| Command                    | Input Parameter | Return Value                               | Return Code            |
-| -------------------------- | --------------- | ------------------------------------------ | ---------------------- |
-| AT+CFM?                    | -               | `AT+CFM: get or set the confirm mode`  | `OK`                     |
-| AT+CFM=?                   | -               | 0 *(if Unconfirmed) or* 1 *(if confirmed)* | `OK`                     |
+| Command                    | Input Parameter | Return Value                               | Return Code                |
+| -------------------------- | --------------- | ------------------------------------------ | -------------------------- |
+| AT+CFM?                    | -               | `AT+CFM: get or set the confirm mode`      | `OK`                       |
+| AT+CFM=?                   | -               | 0 *(if Unconfirmed) or* 1 *(if confirmed)* | `OK`                       |
 | AT+CFM=`<Input Parameter>` | 0 or 1          | -                                          | `OK` *or* `AT_PARAM_ERROR` |
 
 **Examples**:
@@ -454,7 +454,7 @@ This command allows the user to access and configure type of payload of the devi
 ```
 AT+CFM?
 
-AT+CFM: Get or set the confirm mode 
+AT+CFM: Get or set the confirm mode
 OK
 
 AT+CFM=?
@@ -471,7 +471,7 @@ AT+CFM=3
 +CME ERROR:5
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -491,10 +491,10 @@ This command allows the user to join a LoRaWAN® network.
 |                             | *Param3* = **Reattempt interval**: 7 - 255 seconds (30 is default)                                  |                                  |                       |
 |                             | *Param4* = **No. of join attempts**: 0 - 255 (0 is default)                                        |                                  |                       |
 
-_**This is an asynchronous command. OK means that the device is joining. The completion of the JOIN can be verified with AT+NJS=? command.**_     
-The asynchronous responses can be:     
-`+EVT:JOINED` after successful join    
-`+EVT:JOIN FAILED` if the join process did not succeed.    
+_**This is an asynchronous command. OK means that the device is joining. The completion of the JOIN can be verified with AT+NJS=? command.**_
+The asynchronous responses can be:
+`+EVT:JOINED` after successful join
+`+EVT:JOIN FAILED` if the join process did not succeed.
 
 _**Param3 is not supported yet and is fixed to 30s always**_
 
@@ -503,7 +503,7 @@ _**Param3 is not supported yet and is fixed to 30s always**_
 ```
 AT+JOIN?
 
-AT+JOIN: Join network 
+AT+JOIN: Join network
 OK
 
 AT+JOIN=?
@@ -522,7 +522,7 @@ AT+JOIN=3:1:8:10
 +CME ERROR:5
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -542,7 +542,7 @@ This command allows the user to check the status of the devices if it is connect
 ```
 AT+NJS?
 
-AT+NJS: Get the join status 
+AT+NJS: Get the join status
 OK
 
 AT+NJS=?
@@ -551,7 +551,7 @@ AT+NJS:1
 OK
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -572,7 +572,7 @@ This command allows the user to access and configure the activation method of th
 ```
 AT+NJM?
 
-AT+NJM: Get or set the network join mode 
+AT+NJM: Get or set the network join mode
 OK
 
 AT+NJM=?
@@ -589,7 +589,7 @@ AT+NJM=2
 +CME ERROR:5
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -610,7 +610,7 @@ This command allows to set the period in seconds between automatic packet transm
 ```
 AT+SENDFREQ?
 
-AT+SENDFREQ: Get or Set the automatic send time 
+AT+SENDFREQ: Get or Set the automatic send time
 OK
 
 AT+SENDFREQ=?
@@ -623,7 +623,7 @@ AT+SENDFREQ=60
 OK
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -675,7 +675,7 @@ OK
 _**REMARK**_
 In Class C mode the received data is not shown in the AT Command interface. The data has to be handled in the user application
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -696,7 +696,7 @@ This command allows the user to access and configure the adaptive data rate of t
 ```
 AT+ADR?
 
-+ADR: Get or set the adaptive data rate setting 
++ADR: Get or set the adaptive data rate setting
 OK
 
 AT+ADR=?
@@ -713,7 +713,7 @@ AT+ADR=3
 +CME ERROR:5
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -736,7 +736,7 @@ _**This FW of the device supports the LoRaWAN® V1.0.2 stack**_
 ```
 AT+CLASS?
 
-+CLASS: Get or set the device class 
++CLASS: Get or set the device class
 OK
 
 AT+CLASS=?
@@ -753,7 +753,7 @@ AT+CLASS=F
 +CME ERROR:5
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -776,7 +776,7 @@ Check [Appendix I](#appendix-i-data-rate-by-region) for the input parameter depe
 ```
 AT+DR?
 
-AT+DR: Get or Set the Tx DataRate=[0..7] 
+AT+DR: Get or Set the Tx DataRate=[0..7]
 OK
 
 AT+DR=?
@@ -789,7 +789,7 @@ AT+DR=3
 OK
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -814,7 +814,7 @@ For example, at EU868, a value of 2 represents **MaxEIRP - 4 dB** where MaxEIRP 
 ```
 AT+TXP?
 
-AT+TXP: Get or set the transmit power 
+AT+TXP: Get or set the transmit power
 OK
 
 AT+TXP=?
@@ -827,7 +827,7 @@ AT+TXP=0
 OK
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -860,7 +860,7 @@ This command allows the user to access and configure the regional frequency band
 ```
 AT+BAND?
 
-AT+BAND: Get and Set number corresponding to active regions 
+AT+BAND: Get and Set number corresponding to active regions
 OK
 
 AT+BAND=?
@@ -877,7 +877,7 @@ AT+BAND=22
 +CME ERROR:8
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -923,7 +923,7 @@ AT+MASK=13
 +CME ERROR:8
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -954,7 +954,7 @@ AT+BAT=?
 OK
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -974,7 +974,7 @@ This command allows the user to get RSSI value of the last packet received.
 ```
 AT+RSSI?
 
-AT+RSSI: Last RX packet RSSI 
+AT+RSSI: Last RX packet RSSI
 OK
 
 AT+RSSI=?
@@ -983,7 +983,7 @@ AT+RSSI:-41
 OK
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -1003,7 +1003,7 @@ This command allows the user to get SNR value of the last packet received.
 ```
 AT+SNR?
 
-AT+SNR: Last RX packet SNR 
+AT+SNR: Last RX packet SNR
 OK
 
 AT+SNR=?
@@ -1012,7 +1012,7 @@ AT+SNR:11
 OK
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -1032,7 +1032,7 @@ This command allows the user to get firmware version installed on the device.
 ```
 AT+VER?
 
-AT+VER: Get SW version 
+AT+VER: Get SW version
 OK
 
 AT+VER=?
@@ -1041,7 +1041,7 @@ AT+VER:1.0.0.0 May 27 2021 17:11:12
 OK
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -1088,11 +1088,11 @@ LoRaWAN status:
    Region 10
    Network joined
 
-+STATUS: 
++STATUS:
 OK
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -1133,7 +1133,7 @@ AT+NWM=0
 ```
 Module will restart
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -1161,7 +1161,7 @@ AT+PFREQ=?
 OK
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -1189,7 +1189,7 @@ AT+PSF=?
 OK
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -1217,7 +1217,7 @@ AT+PBW=?
 OK
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -1245,7 +1245,7 @@ AT+PCR=?
 OK
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -1273,7 +1273,7 @@ AT+PPL=?
 OK
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -1301,7 +1301,7 @@ AT+PTP=?
 OK
 ```
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -1351,7 +1351,7 @@ OK
 _**REMARK**_
 Received data is not shown in the AT Command interface. The data has to be handled in the user application
 
-[Back](#content)    
+[Back](#content)
 
 ----
 ## AT+PRECV
@@ -1378,17 +1378,17 @@ _**REMARK**_
 - If the value is set to 65535, the device will listen to P2P TX packets without a timeout. But it will stop listening once a P2P LoRa packet is received to save power.
 - If the value is 0, the device will stop listening to P2P TX packets. The device is in TX mode.
 
-[Back](#content)    
+[Back](#content)
 
 ----
 ## AT+GNSS
 
 Description: Set GNSS packet format
 
-This command is used to switch the format of the LoRaWAN packet between three options.     
-0 => 4 digit standard CayenneLPP location format (smaller packet format)    
+This command is used to switch the format of the LoRaWAN packet between three options.
+0 => 4 digit standard CayenneLPP location format (smaller packet format)
 1 => 6 digit extended CayenneLPP location format (higher location precision, requires custom payload decoders)
-2 => [Helium Mapper](https://news.rakwireless.com/make-a-helium-mapper-with-the-wisblock/) location format (for [Helium Hotspot Mapper Application](mappers.helium.com)) 
+2 => [Helium Mapper](https://news.rakwireless.com/make-a-helium-mapper-with-the-wisblock/) location format (for [Helium Hotspot Mapper Application](mappers.helium.com))
 
 | Command                    | Input Parameter | Return Value                | Return Code |
 | -------------------------- | --------------- | --------------------------- | ----------- |
@@ -1406,9 +1406,9 @@ OK
 _**REMARK**_
 - If **`0`**, the payload can be decoded with standard CayenneLPP payload decoders that are available in most LoRaWAN servers, Helium Console and many integrations. This format works with Cayenne MyDevices.
 - If **`1`**, the payload requires a custom payload decoder. Decoders can be found in the [decoders folder](./decoders). This format does _**NOT**_ work with Cayenne MyDevices.
-- If **`2`**, the payload is only working with the [Helium Hotspot Mapper Application](mappers.helium.com). More details can be found in the [Make a Helium Mapper](https://news.rakwireless.com/make-a-helium-mapper-with-the-wisblock/) article.    
+- If **`2`**, the payload is only working with the [Helium Hotspot Mapper Application](mappers.helium.com). More details can be found in the [Make a Helium Mapper](https://news.rakwireless.com/make-a-helium-mapper-with-the-wisblock/) article.
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -1500,15 +1500,15 @@ _**REMARK**_
 | 7         | FSK: 50&nbsp;kbps         | 50000                                |
 | 8 ~ 15    | RFU                       | RFU                                  |
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
 ### Appendix II TX Power by Region
 
 <b> EU868 </b>
- 
-By default, MaxEIRP is considered to be +16&nbsp;dBm. 
+
+By default, MaxEIRP is considered to be +16&nbsp;dBm.
 
 | TXPower | Configuration (EIRP) |
 | ------- | -------------------- |
@@ -1540,7 +1540,7 @@ By default, MaxEIRP is considered to be +16&nbsp;dBm.
 
 <b> AU915 </b>
 
-By default, MaxEIRP is considered to be +30&nbsp;dBm. 
+By default, MaxEIRP is considered to be +30&nbsp;dBm.
 
 | TXPower | Configuration (EIRP) |
 | ------- | -------------------- |
@@ -1553,7 +1553,7 @@ By default, MaxEIRP is considered to be +30&nbsp;dBm.
 
 <b> KR920 </b>
 
-By default, MaxEIRP is considered to be +14&nbsp;dBm. 
+By default, MaxEIRP is considered to be +14&nbsp;dBm.
 
 | TXPower | Configuration (EIRP) |
 | ------- | -------------------- |
@@ -1612,8 +1612,8 @@ By default, MaxEIRP is considered to be 30&nbsp;dBm.
 <br>
 
 <b> RU864 </b>
- 
-By default, MaxEIRP is considered to be +16&nbsp;dBm. 
+
+By default, MaxEIRP is considered to be +16&nbsp;dBm.
 
 | TXPower | Configuration (EIRP) |
 | ------- | -------------------- |
@@ -1661,7 +1661,7 @@ By default, MAxEIRP is considered to be +12.15&nbsp;dBm.
 | 5       | MaxEIRP - 10&nbsp;dB |
 | 6 ~ 15  | RFU                  |
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
@@ -1838,7 +1838,7 @@ _**M in the following list is the length with MAC header, N is the maximum usabl
 | 6         | 250         | 242         |
 | 7         | 250         | 242         |
 | 8 ~ 15    | Not Defined | Not Defined |
- 
+
 <br>
 
 <b> RU864 </b>
@@ -1885,11 +1885,11 @@ _**M in the following list is the length with MAC header, N is the maximum usabl
 | 7         | 250         | 242         |
 | 8 ~ 15    | Not Defined | Not Defined |
 
-[Back](#content)    
+[Back](#content)
 
 ----
 
-_**LoRa® is a registered trademark or service mark of Semtech Corporation or its affiliates.**_    
+_**LoRa® is a registered trademark or service mark of Semtech Corporation or its affiliates.**_
 _**LoRaWAN® is a licensed mark.**_
 
 ----
